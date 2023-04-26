@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1678974241 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\game.cpp
+
+1682521188 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\main.cpp
+	<iostream>
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	"SDL.h"
+	"bird.h"
+	"cloud.h"
+	"mon.h"
+	<chrono>
+	<ctime>
+	<vector>
+	<cstdlib>
+	"Text.h"
+
+1681442019 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\sdl.h
+	<SDL.h>
+	<iostream>
+	<stdio.h>
+	<SDL_image.h>
+
+1678754333 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\sdl.cpp
+	"SDL.h"
+	<iostream>
+
+1679838525 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\cloud.cpp
+	"cloud.h"
+
+1679358384 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\cloud.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1679389574 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\mon.cpp
+	"mon.h"
+
+1679389613 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\mon.h
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1679796748 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bird.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1679797581 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bird.cpp
+	"bird.h"
+
+1681875017 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\text.cpp
+	"Text.h"
+	<cstring>
+
+1681873493 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\text.h
+	<string>
+	<SDL_ttf.h>
+	"SDL.h"
+	<cstring>
+
