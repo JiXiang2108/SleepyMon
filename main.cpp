@@ -34,6 +34,7 @@ int main(int argc, char* argv[])
     SDL_Texture* background1 = loadTexture("SleepyMon.png", renderer);
     SDL_Texture* background2 = loadTexture("SleepyMon(1).png", renderer);
     SDL_Texture* background3 = loadTexture("SleepyMon(2).png", renderer);
+    SDL_Texture* gameover = loadTexture("Game over.png", renderer);
     int a;
     while (!start)
     {
@@ -120,17 +121,18 @@ int main(int argc, char* argv[])
     vector<Bird> birds;
 
     int tocdo = 0;
-
+    /*
     Cloud cloud(renderer, rand() % 400, 0);
     clouds.push_back(cloud);
     Bird bird(renderer, rand() % 600 + 200, 850);
     birds.push_back(bird);
     Bird bird2(renderer, rand() % 600 + 200, 850);
     birds.push_back(bird2);
-
+    */
+    int t = 0;
     while (!quit)
     {
-
+        t = 1;
         while (SDL_PollEvent(&e)) {
             switch (e.type) {
             case SDL_QUIT:
@@ -171,7 +173,7 @@ int main(int argc, char* argv[])
         // Tạo vật cản mới nếu đến đúng thời điểm
         Uint32 elapsed_time = SDL_GetTicks() - start_time;
         if (elapsed_time / 1000 >= 4 && elapsed_time / 1000 - obstacle_timer >= 4) {
-            Cloud cloud(renderer, rand() % 400, 0);
+            Cloud cloud(renderer, rand() % 400 + 300, 0);
             clouds.push_back(cloud);
             obstacle_timer = elapsed_time / 1000;
         }
@@ -185,7 +187,7 @@ int main(int argc, char* argv[])
         currentTime /= 2000;
         string time_ = to_string(currentTime);
         string score_ = "Score: " + time_;
-        Text scoreGame(renderer, SCREEN_WIDTH - 150, 60, score_);
+        Text scoreGame(renderer, SCREEN_WIDTH - 150, 60,100, 30, score_);
         /*
         SDL_Surface* surfaceText = TTF_RenderText_Solid(fontchu, score, {255,255,255});
         SDL_Texture* textureText = SDL_CreateTextureFromSurface(renderer, surfaceText);
@@ -224,6 +226,18 @@ int main(int argc, char* argv[])
 
         SDL_RenderPresent(renderer);
         SDL_Delay(10);
+    }
+
+    if (t == 1)
+    {
+        SDL_RenderClear(renderer);
+        SDL_RenderCopy(renderer, gameover, NULL, NULL);
+        Uint32 currentTime = SDL_GetTicks()/2000;
+        string time_ = to_string(currentTime);
+        Text game_over(renderer, SCREEN_WIDTH - 250, 250,100, 150, time_);
+        game_over.draw(renderer);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(3000);
     }
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

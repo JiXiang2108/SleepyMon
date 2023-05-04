@@ -10,9 +10,9 @@ using namespace std;
 class Text
 {
  public:
-     int x, y;
+     int x, y, w, h;
      const char * s;
-     Text(SDL_Renderer* renderer, int _x, int _y, string _s);
+     Text(SDL_Renderer* renderer, int _x, int _y, int _w, int _h, string _s);
      ~Text();
      void draw(SDL_Renderer * &renderer);
  private:

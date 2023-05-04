@@ -64,3 +64,68 @@
 	"SDL.h"
 	<cstring>
 
+1679797581 source:d:\sleepymon\bird.cpp
+	"bird.h"
+
+1679796748 d:\sleepymon\bird.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1681442019 d:\sleepymon\sdl.h
+	<SDL.h>
+	<iostream>
+	<stdio.h>
+	<SDL_image.h>
+
+1679838525 source:d:\sleepymon\cloud.cpp
+	"cloud.h"
+
+1679358384 d:\sleepymon\cloud.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1678974241 source:d:\sleepymon\game.cpp
+
+1679389574 source:d:\sleepymon\mon.cpp
+	"mon.h"
+
+1679389613 d:\sleepymon\mon.h
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1678754333 source:d:\sleepymon\sdl.cpp
+	"SDL.h"
+	<iostream>
+
+1683208466 source:d:\sleepymon\text.cpp
+	"Text.h"
+	<cstring>
+
+1683208481 d:\sleepymon\text.h
+	<string>
+	<SDL_ttf.h>
+	"SDL.h"
+	<cstring>
+
+1683208195 source:d:\sleepymon\main.cpp
+	<iostream>
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	"SDL.h"
+	"bird.h"
+	"cloud.h"
+	"mon.h"
+	<chrono>
+	<ctime>
+	<vector>
+	<cstdlib>
+	"Text.h"
+
