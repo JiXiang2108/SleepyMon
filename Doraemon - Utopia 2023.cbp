@@ -31,7 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Game.cpp" />
 		<Unit filename="SDL.cpp" />
 		<Unit filename="SDL.h" />
 		<Unit filename="Text.h" />

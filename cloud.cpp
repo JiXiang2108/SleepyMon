@@ -14,7 +14,7 @@ Cloud::~Cloud()
 }
 void Cloud::move()
 {
-    x += 3;
+    x -= 3;
     y += 3;
 }
 void Cloud::draw(SDL_Renderer *&renderer)
