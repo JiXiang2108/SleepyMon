@@ -33,7 +33,7 @@ ____________________
 - 安装 git
 - 复制 repo
 - 单击以下链接下载整个 .dll 文件：https://drive.google.com/drive/folders/1rhahTGsNEi9ltoJWLPpO1OSi4FcvvQosusp=sharing
-- 将整个下载的 .dll 文件剪切到克隆的文件夹中
+- 将整个下载的 .dll 文件剪切到复制的文件夹中
 - 运行 SleepyMon.exe 并玩游戏
 # 如何玩游戏
 - 首先，在开始的屏幕上，如果你想玩就点击Play，如果想点击退出就点击Exit
