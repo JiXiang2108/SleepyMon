@@ -12,4 +12,3 @@
 ![SleepyMon](https://user-images.githubusercontent.com/124177404/236490168-0150350f-7331-439c-abed-4f5db58f826f.png)
 - Điều khiển nhân vật chính tránh vật cản bằng cách dùng phím trái (<) để sang trái và phím phải (>) để sang phải
 - Nếu nhân vật chính đụng phải vật cản thì game sẽ kết thúc và hiển thị điểm của bạn
-![image](https://user-images.githubusercontent.com/124177404/236982926-5a5086e6-1474-4a05-9361-d441eaea0025.png)
