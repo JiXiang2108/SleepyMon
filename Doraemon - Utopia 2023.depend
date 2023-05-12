@@ -64,3 +64,66 @@
 	"SDL.h"
 	<cstring>
 
+1679797581 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\bird.cpp
+	"bird.h"
+
+1679796748 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\bird.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1681442019 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\sdl.h
+	<SDL.h>
+	<iostream>
+	<stdio.h>
+	<SDL_image.h>
+
+1683035639 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\cloud.cpp
+	"cloud.h"
+
+1679358384 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\cloud.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1679389574 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\mon.cpp
+	"mon.h"
+
+1679389613 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\mon.h
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
+
+1678754333 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\sdl.cpp
+	"SDL.h"
+	<iostream>
+
+1683122080 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\text.cpp
+	"Text.h"
+	<cstring>
+
+1683122066 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\text.h
+	<string>
+	<SDL_ttf.h>
+	"SDL.h"
+	<cstring>
+
+1683900360 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\main.cpp
+	<iostream>
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	"SDL.h"
+	"bird.h"
+	"cloud.h"
+	"mon.h"
+	<chrono>
+	<ctime>
+	<vector>
+	<cstdlib>
+	"Text.h"
+
