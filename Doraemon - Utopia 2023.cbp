@@ -38,6 +38,8 @@
 		<Unit filename="bird.h" />
 		<Unit filename="cloud.cpp" />
 		<Unit filename="cloud.h" />
+		<Unit filename="dorayaki.cpp" />
+		<Unit filename="dorayaki.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="mon.cpp" />
 		<Unit filename="mon.h" />

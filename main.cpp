@@ -8,6 +8,7 @@
 #include"bird.h"
 #include"cloud.h"
 #include"mon.h"
+#include"dorayaki.h"
 #include<chrono>
 #include<ctime>
 #include<vector>
@@ -25,7 +26,9 @@ int main(int argc, char* argv[])
     SDL_Event e;
     Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,1024);
     Mix_Music *gMusic = NULL;
+    Mix_Chunk *gSound = NULL;
     gMusic = Mix_LoadMUS( "BG.wav" );
+    gSound = Mix_LoadWAV("Sound.mp3");
     Mix_PlayMusic(gMusic, -1);
     bool quit = false;
     bool start = false;
@@ -48,7 +51,8 @@ int main(int argc, char* argv[])
     int t = 0;
     int highscore = 0;
     int birdx;
-    string time_, hscore, score_,highscore_;
+    int dora = 0;
+    string score, hscore, score_,highscore_;
     //Vị trí các button
     SDL_Rect play_button = {460,478,280,106};
     SDL_Rect exit_button = {460,613,280,106};
@@ -158,6 +162,7 @@ int main(int argc, char* argv[])
     }
     while (t != 2)
     {
+        dora = 0;
         b = 3;
         //đồng hồ và biến đếm thời gian
         Uint32 start_time = SDL_GetTicks();
@@ -167,6 +172,8 @@ int main(int argc, char* argv[])
         SDL_RenderCopy(renderer,background, NULL, NULL);
         //Khởi tạo dora
         Mon mon(renderer, 580, 320);
+        Dorayaki dorayaki(renderer);
+        dorayaki.x = 300;
         vector<Cloud> clouds;
         vector<Bird> birds;
 
@@ -221,12 +228,10 @@ int main(int argc, char* argv[])
                 birds.push_back(bird2);
                 obstacle_timer2 = elapsed_time / 1000;
             }
-            currentTime -= start_time;
-            currentTime /= 2000;
-            time_ = to_string(currentTime);
-            if (highscore < currentTime) highscore = currentTime;
+            score = to_string(dora);
+            if (highscore < dora) highscore = dora;
             hscore = to_string(highscore);
-            score_ = "Score: " + time_;
+            score_ = "Score: " + score;
             highscore_ = "High score: " + hscore;
             Text scoreGame(renderer, SCREEN_WIDTH - 170, 60,100, 30, score_);
             Text high_score(renderer, SCREEN_WIDTH - 170, 30, 160, 30, highscore_);
@@ -249,10 +254,18 @@ int main(int argc, char* argv[])
                 while(birds.size() >= 5) birds.erase(birds.begin() + 0);
 
             }
+            if (dorayaki.x >= mon.x - 40 && dorayaki.x <= mon.x + 100)
+            {
+                Mix_PlayChannel(-1, gSound, 0);
+                dora ++;
+                dorayaki.eat();
+            }
             SDL_RenderCopy(renderer,background, NULL, NULL);
             mon.draw(renderer);
+            dorayaki.draw(renderer);
             scoreGame.draw(renderer);
             high_score.draw(renderer);
+
             for (auto &cloud : clouds) {
                 cloud.draw(renderer);
             }
@@ -268,11 +281,8 @@ int main(int argc, char* argv[])
         {
             SDL_RenderClear(renderer);
             SDL_RenderCopy(renderer, gameover1, NULL, NULL);
-            Uint32 currentTime = SDL_GetTicks();
-            currentTime -= start_time;
-            currentTime /= 2000;
-            time_ = to_string(currentTime);
-            Text game_over(renderer, SCREEN_WIDTH - 220, 210,60, 90, time_);
+            score = to_string(dora);
+            Text game_over(renderer, SCREEN_WIDTH - 220, 210,60, 90, score);
             Text game_over2(renderer, SCREEN_WIDTH - 220, 288, 60, 90, hscore);
             while (t == 1)
             {
@@ -318,6 +328,10 @@ int main(int argc, char* argv[])
             }
         }
     }
+    Mix_FreeMusic(gMusic);
+    Mix_FreeChunk(gSound);
+    gMusic = NULL;
+    gSound = NULL;
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

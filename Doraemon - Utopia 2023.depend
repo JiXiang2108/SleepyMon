@@ -110,7 +110,7 @@
 	"SDL.h"
 	<cstring>
 
-1683900360 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\main.cpp
+1684072876 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\main.cpp
 	<iostream>
 	<SDL.h>
 	<stdio.h>
@@ -121,9 +121,19 @@
 	"bird.h"
 	"cloud.h"
 	"mon.h"
+	"dorayaki.h"
 	<chrono>
 	<ctime>
 	<vector>
 	<cstdlib>
 	"Text.h"
+
+1684071777 source:c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\dorayaki.cpp
+	"dorayaki.h"
+
+1684029731 c:\users\cattu\onedrive\documents\my c++ ^^\doraemon - utopia 2023\bin\release\dorayaki.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_image.h>
+	"SDL.h"
 
