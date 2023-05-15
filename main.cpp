@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     SDL_Texture* gameover3 = loadTexture("Game over (3).png", renderer);
     SDL_Texture* xicon = loadTexture("X.png", renderer);
     SDL_Texture* soundicon = loadTexture("Soundicon.png", renderer);
-    int a = 4;
+    int a = 5;
     int b = 3;
     int c = 0;
     int t = 0;
@@ -72,16 +72,73 @@ int main(int argc, char* argv[])
             {
                 SDL_Point mouse;
                 SDL_GetMouseState(&mouse.x, &mouse.y);
-                if (SDL_PointInRect(&mouse, &play_button)) a = 1;
-                else if (SDL_PointInRect(&mouse, &exit_button)) a = 2;
-                else if (SDL_PointInRect(&mouse, &tutorial)) a = 3;
-                else if (SDL_PointInRect(&mouse, &sound)) a = 8;
-                else a = 4;
+                if (SDL_PointInRect(&mouse, &play_button))
+                {
+                    a = 1;
+                    SDL_RenderCopy(renderer, background2, NULL, NULL);
+                }
+                else if (SDL_PointInRect(&mouse, &exit_button))
+                {
+                    a = 2;
+                    SDL_RenderCopy(renderer, background3, NULL, NULL);
+                }
+                else if (SDL_PointInRect(&mouse, &tutorial))
+                {
+                    a = 3;
+                    SDL_RenderCopy(renderer, background4, NULL, NULL);
+                }
+                else if (SDL_PointInRect(&mouse, &sound)) a = 4;
+                else
+                {
+                    a = 5;
+                    SDL_RenderCopy(renderer, background1, NULL, NULL);
+                }
             }
-            if (SDL_MOUSEBUTTONDOWN == e.type && a == 1) a = 5;
-            if (SDL_MOUSEBUTTONDOWN == e.type && a == 2) a = 6;
-            if (SDL_MOUSEBUTTONDOWN == e.type && a == 3) a = 7;
-            if (SDL_MOUSEBUTTONDOWN == e.type && a == 8)
+            if (SDL_MOUSEBUTTONDOWN == e.type && a == 1)
+            {
+                start = true;
+            }
+            if (SDL_MOUSEBUTTONDOWN == e.type && a == 2)
+            {
+                start = true;
+                t = 2;
+            }
+            if (SDL_MOUSEBUTTONDOWN == e.type && a == 3)
+            {
+                c = 0;
+                tutor = true;
+                while (tutor)
+                {
+                    SDL_RenderClear(renderer);
+                    while (SDL_PollEvent(&e))
+                    {
+                        if (SDL_MOUSEMOTION == e.type)
+                        {
+                            SDL_Point mouse;
+                            SDL_GetMouseState(&mouse.x, &mouse.y);
+                            if (SDL_PointInRect(&mouse, &back_button))
+                            {
+                                c = 1;
+                            }
+                            else c = 0;
+                        }
+                        if (SDL_MOUSEBUTTONDOWN == e.type && c == 1) tutor = false;
+                    }
+                    if (c == 1)
+                    {
+                        SDL_RenderClear(renderer);
+                        SDL_RenderCopy(renderer, background6, NULL, NULL);
+                    }
+                    else
+                    {
+                        SDL_RenderClear(renderer);
+                        SDL_RenderCopy(renderer, background5, NULL, NULL);
+                    }
+                    SDL_RenderPresent(renderer);
+                }
+                a = 5;
+            }
+            if (SDL_MOUSEBUTTONDOWN == e.type && a == 4)
             {
                 if (mute == true)
                 {
@@ -94,66 +151,6 @@ int main(int argc, char* argv[])
                     Mix_PauseMusic();
                 }
             }
-        }
-        if (a == 1)
-        {
-            SDL_RenderCopy(renderer, background2, NULL, NULL);
-        }
-        else if (a == 2)
-        {
-            SDL_RenderCopy(renderer, background3, NULL, NULL);
-        }
-        else if (a == 3)
-        {
-            SDL_RenderCopy(renderer, background4, NULL, NULL);
-        }
-        else if (a == 4)
-        {
-            SDL_RenderCopy(renderer, background1, NULL, NULL);
-        }
-        else if (a == 5)
-        {
-            start = true;
-        }
-        else if (a == 6)
-        {
-            start = true;
-            t = 2;
-        }
-        else if (a == 7)
-        {
-            c = 0;
-            tutor = true;
-            while (tutor)
-            {
-                SDL_RenderClear(renderer);
-                while (SDL_PollEvent(&e))
-                {
-                    if (SDL_MOUSEMOTION == e.type)
-                    {
-                        SDL_Point mouse;
-                        SDL_GetMouseState(&mouse.x, &mouse.y);
-                        if (SDL_PointInRect(&mouse, &back_button))
-                        {
-                            c = 1;
-                        }
-                        else c = 0;
-                    }
-                    if (SDL_MOUSEBUTTONDOWN == e.type && c == 1) tutor = false;
-                }
-                if (c == 1)
-                {
-                    SDL_RenderClear(renderer);
-                    SDL_RenderCopy(renderer, background6, NULL, NULL);
-                }
-                else
-                {
-                    SDL_RenderClear(renderer);
-                    SDL_RenderCopy(renderer, background5, NULL, NULL);
-                }
-                SDL_RenderPresent(renderer);
-            }
-            a = 4;
         }
         SDL_RenderCopy(renderer, soundicon, NULL, &sound);
         if (mute == true) SDL_RenderCopy(renderer, xicon, NULL, &x_button);
