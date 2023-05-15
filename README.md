@@ -43,6 +43,11 @@ ____________________
 - 每吃一次铜锣烧，就会增加1分。
 - 如果主角撞到障碍物，游戏将结束并显示你的分数
 
+![image](https://github.com/JiXiang2108/SleepyMon/assets/124177404/87855450-d292-4f7b-8b3e-7a886e8d03d8)
+![image](https://github.com/JiXiang2108/SleepyMon/assets/124177404/002d38f2-a6bd-4cab-b27c-e7ee5a1549fb)
+![image](https://github.com/JiXiang2108/SleepyMon/assets/124177404/a9d37aaf-514a-4e36-b17e-35c28757e5d2)
+![image](https://github.com/JiXiang2108/SleepyMon/assets/124177404/80ae9bea-d1c7-4ea2-8ba5-5c2658a18224)
+![image](https://github.com/JiXiang2108/SleepyMon/assets/124177404/937ae12a-11cc-4ff3-87ed-ad62e0884751)
 
 https://github.com/JiXiang2108/SleepyMon/assets/124177404/3a546bde-871a-4dd0-87ec-e9b6262ca449
 
